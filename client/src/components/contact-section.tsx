@@ -37,28 +37,8 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-background" data-testid="section-contact">
+    <section id="contact" className="py-12 md:py-16 bg-background" data-testid="section-contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block text-sm font-semibold tracking-widest uppercase text-gradient mb-3">
-            Get In Touch
-          </span>
-          <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6"
-            data-testid="text-contact-heading"
-          >
-            Let's Connect
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have something to say? We're all ears. Whether it's a collab, a topic idea, or just some love - reach out.
-          </p>
-        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           <div className="space-y-6">

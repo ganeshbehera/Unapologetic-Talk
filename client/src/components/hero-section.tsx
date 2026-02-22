@@ -2,14 +2,10 @@ import { ArrowDown, Play } from "lucide-react";
 import { SiYoutube } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { YOUTUBE_CHANNEL_URL } from "@/lib/episodes-data";
+import { Link } from "wouter";
 import { motion } from "framer-motion";
 
 export function HeroSection() {
-  const scrollToEpisodes = () => {
-    const el = document.querySelector("#episodes");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section
       id="home"
@@ -78,16 +74,17 @@ export function HeroSection() {
             <SiYoutube className="w-5 h-5" />
             Watch on YouTube
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="gap-2 text-base px-8 bg-white/5 backdrop-blur-sm border-white/20 text-white"
-            onClick={scrollToEpisodes}
-            data-testid="button-hero-episodes"
-          >
-            <Play className="w-4 h-4" />
-            Browse Episodes
-          </Button>
+          <Link href="/episodes">
+            <Button
+              size="lg"
+              variant="outline"
+              className="gap-2 text-base px-8 bg-white/5 backdrop-blur-sm border-white/20 text-white"
+              data-testid="button-hero-episodes"
+            >
+              <Play className="w-4 h-4" />
+              Browse Episodes
+            </Button>
+          </Link>
         </motion.div>
       </div>
 
@@ -98,7 +95,10 @@ export function HeroSection() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <button
-          onClick={scrollToEpisodes}
+          onClick={() => {
+            const el = document.querySelector("#home-content");
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+          }}
           className="text-white/40 animate-bounce"
           data-testid="button-scroll-down"
         >

@@ -161,7 +161,7 @@ export function EpisodesSection({ episodes = [], isLoading, onPlay }: EpisodesSe
   return (
     <section
       id="episodes"
-      className="py-24 md:py-32 bg-card/30"
+      className="py-12 md:py-16 bg-card/30"
       data-testid="section-episodes"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -170,21 +170,8 @@ export function EpisodesSection({ episodes = [], isLoading, onPlay }: EpisodesSe
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
-          <span className="inline-block text-sm font-semibold tracking-widest uppercase text-gradient mb-3">
-            All Episodes
-          </span>
-          <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-6"
-            data-testid="text-episodes-heading"
-          >
-            Tune In &amp; Turn Up
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Catch up on our latest conversations. Every episode is a deep dive into the topics that matter most.
-          </p>
-
           <div className="max-w-md mx-auto relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
