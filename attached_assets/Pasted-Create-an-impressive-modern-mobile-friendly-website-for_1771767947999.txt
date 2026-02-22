@@ -1,0 +1,79 @@
+Create an impressive, modern, mobile-friendly website for a YouTube podcast/talk show brand.
+
+Project Name / Domain:
+realunapologetic.com
+
+YouTube Channel:
+https://www.youtube.com/@RealAndUnapologetic
+
+Website Goal:
+Build a bold, premium-looking website for the talk show “Real And Unapologetic” that showcases the brand, the show’s description, and all YouTube episodes in a clean, engaging format.
+
+Brand Style / Tone:
+Bold, fearless, authentic, confident, modern, premium.
+Design should feel powerful and stylish (not basic, not generic).
+
+Main Description (use this exact messaging on the site):
+“This is Real And Unapologetic - where raw meets real and fearless meets fabulous.
+Expect bold opinions, spicy takes, unedited stories, and conversations that cut through the noise.
+If you love authenticity, drama-free honesty, and unapologetic confidence... you'll feel right at home!”
+
+Requirements:
+1. Build a beautiful homepage with:
+   - Hero section (big headline + tagline + CTA buttons like “Watch on YouTube” / “Latest Episodes”)
+   - About the show section using the description above
+   - Featured/latest episode section
+   - Episodes section (all episodes)
+   - Subscribe CTA section
+   - Footer with YouTube/social links
+
+2. Episodes section must show:
+   - Episode name/title
+   - YouTube link (watch button)
+   - Episode description shown beside the episode name
+   - Thumbnail
+   - Publish date
+   - Optional embedded YouTube player for each episode (or modal popup)
+
+3. Fetch YouTube episodes dynamically from the channel:
+   - Preferred: YouTube Data API v3 using environment variable for API key
+   - Fallback: YouTube channel RSS feed or a local JSON file if API key is not provided
+   - Make the code easy to update later
+
+4. UI/UX expectations:
+   - Clean, modern, premium design
+   - Smooth animations / transitions
+   - Mobile responsive (must look great on phone)
+   - Dark theme (preferred) with bold accent colors
+   - Easy navigation with sticky header
+   - Fast loading
+
+5. SEO + Meta:
+   - Add SEO title, meta description, Open Graph tags
+   - Use proper headings and semantic HTML
+   - Make it shareable for social previews
+
+6. Extra features (nice to have):
+   - Search/filter episodes by keyword
+   - “Load more” episodes
+   - Newsletter signup form (frontend placeholder is fine)
+   - Contact/Collab section
+
+Technical Preferences:
+- Use React + Tailwind CSS (or Next.js + Tailwind if you prefer)
+- Keep code clean and structured
+- Create reusable components (Navbar, Hero, EpisodeCard, Footer, etc.)
+- Add comments where helpful
+- Include a README with setup instructions
+
+Important:
+- Do NOT use lorem ipsum dummy text for the brand sections.
+- Use the exact podcast description provided above.
+- Make the website visually impressive and production-ready.
+- Episode title and description should be clearly visible and readable.
+- Show the YouTube link/button beside each episode title/description.
+
+Deliverables:
+- Full working website code
+- .env.example file (if using YouTube API)
+- README with run/setup instructions

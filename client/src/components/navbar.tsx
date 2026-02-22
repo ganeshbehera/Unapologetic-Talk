@@ -11,6 +11,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Episodes", href: "#episodes" },
   { label: "Subscribe", href: "#subscribe" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
@@ -49,7 +50,7 @@ export function Navbar() {
             >
               <span className="text-lg md:text-xl font-bold tracking-tight">
                 <span className="text-gradient">REAL</span>
-                <span className="text-foreground"> & </span>
+                <span className={`${scrolled ? "text-foreground" : "text-white"} transition-colors`}> & </span>
                 <span className="text-gradient">UNAPOLOGETIC</span>
               </span>
             </a>
@@ -59,7 +60,9 @@ export function Navbar() {
                 <button
                   key={link.href}
                   onClick={() => handleNavClick(link.href)}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground transition-colors rounded-md hover-elevate"
+                  className={`px-3 py-2 text-sm font-medium transition-colors rounded-md hover-elevate ${
+                    scrolled ? "text-muted-foreground" : "text-white/70"
+                  }`}
                   data-testid={`link-nav-${link.label.toLowerCase()}`}
                 >
                   {link.label}
