@@ -56,7 +56,7 @@ const values = [
 const milestones = [
   { icon: Film, title: "Bollywood Actress", description: "Featured in numerous Bollywood films including Red Swastik, Dil Bole Hadippa!, and more" },
   { icon: Crown, title: "Miss Andhra", description: "Winner of the prestigious Miss Andhra beauty pageant during her early career" },
-  { icon: Award, title: "Trailblazer", description: "First Indian woman featured on the cover of Playboy magazine in 2012" },
+  { icon: Award, title: "Trailblazer", description: "A fearless voice who has always challenged norms and paved her own path in the entertainment industry" },
 ];
 
 export default function About() {
@@ -78,7 +78,7 @@ export default function About() {
             className="max-w-3xl mx-auto text-center mb-20"
           >
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Sherlyn Chopra is a Bollywood actress, model, singer, and producer born in Hyderabad, India. From winning the Miss Andhra beauty pageant to starring in films and making history as the first Indian woman on the cover of Playboy magazine, she has always lived life on her own terms.
+              Sherlyn Chopra is a Bollywood actress, model, singer, and producer born in Hyderabad, India. From winning the Miss Andhra beauty pageant to starring in films, she has always lived life on her own terms.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Now she brings that same fearless energy to <strong className="text-foreground">Real And Unapologetic</strong> - a talk show where authenticity reigns, drama-free honesty flows, and unapologetic confidence is celebrated. If you love raw conversations that cut through the noise, you're home.
