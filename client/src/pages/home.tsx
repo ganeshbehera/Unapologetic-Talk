@@ -24,58 +24,22 @@ export default function Home() {
     queryKey: ["/api/episodes"],
   });
 
-  const latestEpisode = episodes.length > 0 ? episodes[0] : null;
-  const recentEpisodes = episodes.slice(1, 4);
+  const nowPlayingEpisode: Episode = {
+    id: "now-playing",
+    title: "Welcome to Real And Unapologetic",
+    description: "The very first episode where we introduce ourselves and set the tone for what this show is all about. Raw conversations, unfiltered opinions, and a space where authenticity reigns supreme. No scripts, no filters, just real talk.",
+    youtubeId: "Eq6gzqwK0ds",
+    youtubeUrl: "https://www.youtube.com/watch?v=Eq6gzqwK0ds",
+    thumbnail: `https://img.youtube.com/vi/Eq6gzqwK0ds/maxresdefault.jpg`,
+    publishedAt: "2024-06-01",
+  };
+  const recentEpisodes = episodes.slice(0, 3);
 
   return (
     <Layout>
       <HeroSection />
 
-      <section id="home-content" className="py-24 md:py-32 bg-card/20 relative overflow-hidden" data-testid="section-now-playing">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/3 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-              <motion.div
-                className="w-2 h-2 rounded-full bg-red-500"
-                animate={{ scale: [1, 1.3, 1], opacity: [1, 0.6, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              />
-              Now Playing
-            </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground" data-testid="text-now-playing-heading">
-              Watch Now
-            </h2>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="relative rounded-xl overflow-hidden shadow-2xl shadow-black/20"
-          >
-            <div className="aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/Eq6gzqwK0ds?rel=0"
-                title="Now Playing - Real And Unapologetic"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-                data-testid="iframe-now-playing"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-24 md:py-32 bg-background" data-testid="section-about-preview">
+      <section id="home-content" className="py-24 md:py-32 bg-background" data-testid="section-about-preview">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -133,9 +97,7 @@ export default function Home() {
         </div>
       </section>
 
-      {latestEpisode && (
-        <FeaturedEpisode episode={latestEpisode} onPlay={playVideo} />
-      )}
+      <FeaturedEpisode episode={nowPlayingEpisode} onPlay={playVideo} />
 
       {recentEpisodes.length > 0 && (
         <section className="py-24 md:py-32 bg-card/20" data-testid="section-recent-episodes">
