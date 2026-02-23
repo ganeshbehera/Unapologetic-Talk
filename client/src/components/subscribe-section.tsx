@@ -14,9 +14,9 @@ const socials = [
   {
     name: "Instagram",
     icon: SiInstagram,
-    url: "https://www.instagram.com/realandunapologetic/",
+    url: "https://www.instagram.com/_sherlynchopra_/",
     color: "bg-gradient-to-tr from-purple-600 via-pink-500 to-orange-400",
-    description: "Behind the scenes & clips",
+    description: "Behind the scenes & updates",
   },
   {
     name: "TikTok",
@@ -55,7 +55,7 @@ export function SubscribeSection() {
             Never Miss an Episode
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-14">
-            Follow us everywhere and join a community of people who aren't afraid to be themselves. Your vibe attracts your tribe.
+            Follow Sherlyn everywhere and join a community of fearless individuals who aren't afraid to be themselves. Your vibe attracts your tribe.
           </p>
         </motion.div>
 

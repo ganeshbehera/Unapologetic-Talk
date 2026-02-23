@@ -1,9 +1,10 @@
 # Real And Unapologetic - Podcast Website
 
 ## Overview
-A multi-page website for the "Real And Unapologetic" YouTube podcast channel (https://www.youtube.com/@RealAndUnapologetic). The site features bold branding, dark/light theme support, multiple dedicated pages, and modern animations.
+A multi-page website for the "Real And Unapologetic" YouTube podcast/talk show by Sherlyn Chopra (Bollywood actress). The site features bold branding, dark/light theme support, multiple dedicated pages, modern animations, and glamorous design fitting a celebrity podcast.
 
 ## Recent Changes
+- **Feb 2026**: Major content overhaul - integrated Sherlyn Chopra's biography, milestones (Bollywood career, Miss Andhra, Playboy cover), updated all copy to reference Sherlyn as host, generated glamorous podcast studio hero background, updated Instagram link to @_sherlynchopra_, refined color palette to rose/pink glamorous feel
 - **Feb 2026**: Comprehensive design upgrade - glass morphism navbar, refined page headers with decorative blur elements, polished cards with rounded-2xl icon containers, consistent label pill badges, improved visual hierarchy with soft gradients, smooth hover transitions on episode thumbnails, newsletter section with mail icon, refined contact form
 - **Feb 2026**: Integrated transparent channel logo across hero, navbar, footer with CSS filter dark/light mode support
 - **Feb 2026**: Converted from single-page to multi-page website with dedicated Home, About, Episodes, and Contact pages
@@ -42,11 +43,15 @@ A multi-page website for the "Real And Unapologetic" YouTube podcast channel (ht
 - `server/routes.ts` - API endpoints for episodes and channel info
 
 ### Design Tokens
-- Primary color: Rose/Pink (342 85% 53% light, 9 75% 61% dark)
+- Primary color: Rose/Pink (340 82% 52% light, 340 75% 55% dark)
 - Font: Poppins (sans)
-- Dark mode default with warm card backgrounds
+- Dark mode default with deep blue-gray backgrounds (240 hue)
+- Glamorous feel with primary shadows and gradient accents
 
 ## User Preferences
-- Bold, edgy branding that matches the podcast personality
+- Bold, glamorous branding matching Sherlyn Chopra's celebrity personality
+- Host: Sherlyn Chopra (Bollywood actress, producer, model)
+- Instagram: @_sherlynchopra_ (14M+ followers)
+- Contact: contact@sherlynchopra.com
 - YouTube channel: https://www.youtube.com/@RealAndUnapologetic
 - Domain: realunapologetic.com

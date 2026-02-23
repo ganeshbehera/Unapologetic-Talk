@@ -10,7 +10,7 @@ export default function Contact() {
       <PageHeader
         label="Get In Touch"
         title="Let's Connect"
-        description="Have something to say? We're all ears. Whether it's a collab, a topic idea, or just some love - reach out."
+        description="Have something to say? Whether it's a collaboration, a topic idea, or just some love for Sherlyn - we'd love to hear from you."
       />
       <ContactSection />
       <NewsletterSection />

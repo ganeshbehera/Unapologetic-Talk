@@ -33,7 +33,7 @@ export function NewsletterSection() {
             Get Notified About New Episodes
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-10">
-            Join the community and be the first to know when new episodes drop. No spam, just real updates.
+            Join Sherlyn's community and be the first to know when new episodes drop. No spam, just real updates.
           </p>
 
           {submitted ? (

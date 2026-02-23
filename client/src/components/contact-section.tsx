@@ -10,12 +10,12 @@ const contactReasons = [
   {
     icon: Users,
     title: "Collaboration",
-    description: "Want to be a guest on the show or collaborate? We'd love to hear from you.",
+    description: "Want to be a guest on the show or collaborate with Sherlyn? We'd love to hear from you.",
   },
   {
     icon: MessageSquare,
     title: "Topic Suggestions",
-    description: "Got a spicy topic you want us to cover? Drop us a message.",
+    description: "Got a spicy topic you want Sherlyn to cover? Drop us a message.",
   },
   {
     icon: Mail,

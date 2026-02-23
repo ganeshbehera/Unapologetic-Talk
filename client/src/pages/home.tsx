@@ -5,16 +5,16 @@ import { FeaturedEpisode } from "@/components/featured-episode";
 import { NewsletterSection } from "@/components/newsletter-section";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mic2, Flame, Heart, ArrowRight, Play } from "lucide-react";
+import { Mic2, Flame, Heart, ArrowRight, Play, Crown } from "lucide-react";
 import { Link } from "wouter";
 import { useVideo } from "@/lib/video-context";
 import type { Episode } from "@/lib/episodes-data";
 import { motion } from "framer-motion";
 
 const highlights = [
-  { icon: Flame, title: "Bold Opinions", description: "No sugarcoating - just honest, thought-provoking perspectives on what matters." },
-  { icon: Mic2, title: "Spicy Takes", description: "Hot topics everyone thinks about but no one's saying out loud." },
-  { icon: Heart, title: "Unedited Stories", description: "Real stories from real people. No scripts, no filters, no apologies." },
+  { icon: Flame, title: "Bold Opinions", description: "Unfiltered perspectives on life, love, and everything in between. No sugarcoating." },
+  { icon: Mic2, title: "Spicy Takes", description: "The conversations everyone's thinking about but nobody dares to have out loud." },
+  { icon: Heart, title: "Unedited Stories", description: "Real stories, raw emotions. No scripts, no filters, no apologies." },
 ];
 
 export default function Home() {
@@ -47,7 +47,7 @@ export default function Home() {
               What We're All About
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              This is <strong className="text-foreground">Real And Unapologetic</strong> - a talk show where we break down life's biggest questions with honesty, humor, and heart.
+              Hosted by <strong className="text-foreground">Sherlyn Chopra</strong> - Bollywood actress, fearless voice, and unapologetic trailblazer. This is the space where authenticity reigns and every conversation cuts through the noise.
             </p>
           </motion.div>
 
@@ -81,7 +81,7 @@ export default function Home() {
           >
             <Link href="/about">
               <Button variant="outline" className="gap-2" data-testid="button-learn-more">
-                Learn More About Us
+                Learn More About Sherlyn
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>

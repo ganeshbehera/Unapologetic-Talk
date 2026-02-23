@@ -23,8 +23,11 @@ export function Footer() {
               className="h-9 w-auto mb-4 dark:brightness-0 dark:invert"
               data-testid="img-footer-logo"
             />
-            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm">
-              Raw meets real. Fearless meets fabulous. Bold opinions, spicy takes, and conversations that cut through the noise.
+            <p className="text-sm text-muted-foreground leading-relaxed max-w-sm mb-2">
+              A talk show by Sherlyn Chopra. Raw meets real. Fearless meets fabulous. Bold opinions, spicy takes, and conversations that cut through the noise.
+            </p>
+            <p className="text-xs text-muted-foreground/60">
+              contact@sherlynchopra.com
             </p>
           </div>
 
@@ -57,7 +60,7 @@ export function Footer() {
                 <SiYoutube className="w-4 h-4 text-muted-foreground" />
               </a>
               <a
-                href="https://www.instagram.com/realandunapologetic/"
+                href="https://www.instagram.com/_sherlynchopra_/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-muted/60 flex items-center justify-center hover-elevate transition-all"
@@ -76,11 +79,9 @@ export function Footer() {
           <p className="text-xs text-muted-foreground/60">
             &copy; {currentYear} Real And Unapologetic. All rights reserved.
           </p>
-          <div className="flex items-center gap-1">
-            <span className="text-xs text-muted-foreground/40">Made with</span>
-            <span className="text-primary text-xs">&#9829;</span>
-            <span className="text-xs text-muted-foreground/40">for the unapologetic</span>
-          </div>
+          <p className="text-xs text-muted-foreground/40">
+            A Sherlyn Chopra Production
+          </p>
         </div>
       </div>
     </footer>

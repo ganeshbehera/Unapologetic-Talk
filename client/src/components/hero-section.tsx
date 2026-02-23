@@ -1,4 +1,4 @@
-import { ArrowDown, Play, Headphones } from "lucide-react";
+import { ArrowDown, Play, Headphones, Sparkles } from "lucide-react";
 import { SiYoutube } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { YOUTUBE_CHANNEL_URL } from "@/lib/episodes-data";
@@ -41,7 +41,7 @@ export function HeroSection() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="mb-8"
+          className="mb-6"
         >
           <motion.img
             src="/images/channel-logo.png"
@@ -59,16 +59,16 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 mb-8">
+          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 mb-6">
             <motion.div
               className="w-2 h-2 rounded-full bg-red-500"
               animate={{ scale: [1, 1.3, 1], opacity: [1, 0.6, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             />
             <span className="text-sm text-white/80 font-medium tracking-wide uppercase">
-              New Episodes Every Friday
+              With Sherlyn Chopra
             </span>
-            <Headphones className="w-4 h-4 text-white/50" />
+            <Sparkles className="w-4 h-4 text-white/50" />
           </div>
         </motion.div>
 
@@ -86,7 +86,7 @@ export function HeroSection() {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
-          className="h-0.5 w-20 mx-auto bg-gradient-to-r from-transparent via-white/30 to-transparent mb-8"
+          className="h-0.5 w-20 mx-auto bg-gradient-to-r from-transparent via-white/30 to-transparent mb-6"
         />
 
         <motion.p
