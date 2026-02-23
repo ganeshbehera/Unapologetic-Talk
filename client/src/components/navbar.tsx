@@ -45,11 +45,12 @@ export function Navbar() {
               className="flex items-center gap-2 flex-shrink-0"
               data-testid="link-logo"
             >
-              <span className="text-lg md:text-xl font-bold tracking-tight">
-                <span className="text-gradient">REAL</span>
-                <span className={`${showTransparent ? "text-white" : "text-foreground"} transition-colors`}> & </span>
-                <span className="text-gradient">UNAPOLOGETIC</span>
-              </span>
+              <img
+                src="/images/channel-logo.png"
+                alt="Real And Unapologetic"
+                className={`h-8 md:h-10 w-auto transition-all ${showTransparent ? "brightness-0 invert" : "dark:brightness-0 dark:invert"}`}
+                data-testid="img-navbar-logo"
+              />
             </Link>
 
             <div className="hidden md:flex items-center gap-1">

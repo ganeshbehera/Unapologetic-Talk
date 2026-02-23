@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { YOUTUBE_CHANNEL_URL } from "@/lib/episodes-data";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import channelBanner from "@assets/channels4_banner_1771816802568.jpg";
+
 
 const floatingParticles = Array.from({ length: 6 }, (_, i) => ({
   id: i,
@@ -73,9 +73,9 @@ export function HeroSection() {
           className="mb-8"
         >
           <motion.img
-            src={channelBanner}
+            src="/images/channel-logo.png"
             alt="Real And Unapologetic"
-            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto drop-shadow-2xl"
+            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto drop-shadow-2xl brightness-0 invert"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}

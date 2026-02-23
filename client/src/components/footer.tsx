@@ -17,11 +17,12 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           <div>
-            <div className="text-lg font-bold tracking-tight mb-2">
-              <span className="text-gradient">REAL</span>
-              <span className="text-foreground"> & </span>
-              <span className="text-gradient">UNAPOLOGETIC</span>
-            </div>
+            <img
+              src="/images/channel-logo.png"
+              alt="Real And Unapologetic"
+              className="h-10 w-auto mb-2 dark:brightness-0 dark:invert"
+              data-testid="img-footer-logo"
+            />
             <p className="text-sm text-muted-foreground leading-relaxed">
               Raw meets real. Fearless meets fabulous. Bold opinions, spicy takes, and conversations that cut through the noise.
             </p>
