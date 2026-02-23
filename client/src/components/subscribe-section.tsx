@@ -1,4 +1,4 @@
-import { SiYoutube, SiInstagram, SiTiktok, SiSpotify } from "react-icons/si";
+import { SiYoutube, SiInstagram, SiSpotify } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { YOUTUBE_CHANNEL_URL } from "@/lib/episodes-data";
 import { motion } from "framer-motion";
@@ -17,13 +17,6 @@ const socials = [
     url: "https://www.instagram.com/_sherlynchopra_/",
     color: "bg-gradient-to-tr from-purple-600 via-pink-500 to-orange-400",
     description: "Behind the scenes & updates",
-  },
-  {
-    name: "TikTok",
-    icon: SiTiktok,
-    url: "#",
-    color: "bg-foreground",
-    description: "Short-form spicy takes",
   },
   {
     name: "Spotify",
