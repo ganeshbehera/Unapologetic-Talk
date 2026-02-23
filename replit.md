@@ -4,6 +4,8 @@
 A multi-page website for the "Real And Unapologetic" YouTube podcast channel (https://www.youtube.com/@RealAndUnapologetic). The site features bold branding, dark/light theme support, multiple dedicated pages, and modern animations.
 
 ## Recent Changes
+- **Feb 2026**: Comprehensive design upgrade - glass morphism navbar, refined page headers with decorative blur elements, polished cards with rounded-2xl icon containers, consistent label pill badges, improved visual hierarchy with soft gradients, smooth hover transitions on episode thumbnails, newsletter section with mail icon, refined contact form
+- **Feb 2026**: Integrated transparent channel logo across hero, navbar, footer with CSS filter dark/light mode support
 - **Feb 2026**: Converted from single-page to multi-page website with dedicated Home, About, Episodes, and Contact pages
 - **Feb 2026**: Initial build - Hero section, About section, Episodes grid, Subscribe/Social section, Footer, dark/light theme toggle, responsive navigation
 

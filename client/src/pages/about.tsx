@@ -62,14 +62,14 @@ export default function About() {
         description="This is Real And Unapologetic - a talk show where we break down life's biggest questions with honesty, humor, and heart."
       />
 
-      <section className="py-16 md:py-24 bg-background" data-testid="section-about">
+      <section className="py-20 md:py-28 bg-background" data-testid="section-about">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center mb-16"
+            className="max-w-3xl mx-auto text-center mb-20"
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
               If you love authenticity, drama-free honesty, and unapologetic confidence... you'll feel right at home.
@@ -77,16 +77,21 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="mb-20">
-            <motion.h3
+          <div className="mb-24">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10"
+              className="text-center mb-12"
             >
-              What You Can Expect
-            </motion.h3>
+              <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+                The Experience
+              </span>
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                What You Can Expect
+              </h3>
+            </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {features.map((feature, index) => (
                 <motion.div
@@ -96,15 +101,15 @@ export default function About() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="h-full hover-elevate transition-all duration-300" data-testid={`card-feature-${index}`}>
-                    <CardContent className="p-6 md:p-8">
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center">
-                          <feature.icon className="w-6 h-6 text-primary" />
+                  <Card className="h-full group hover-elevate transition-all duration-300 border-border/50" data-testid={`card-feature-${index}`}>
+                    <CardContent className="p-7 md:p-8">
+                      <div className="flex items-start gap-5">
+                        <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                          <feature.icon className="w-5 h-5 text-primary" />
                         </div>
                         <div>
                           <h3 className="text-lg font-semibold text-card-foreground mb-2">{feature.title}</h3>
-                          <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                          <p className="text-muted-foreground leading-relaxed text-sm">{feature.description}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -119,28 +124,38 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="mb-20"
+            className="mb-24"
           >
-            <Card className="border-primary/20 bg-gradient-to-br from-primary/5 via-transparent to-primary/5" data-testid="card-mission">
-              <CardContent className="p-8 md:p-12 text-center">
-                <h3 className="text-2xl md:text-3xl font-bold text-card-foreground mb-4">Our Mission</h3>
+            <div className="relative rounded-2xl overflow-hidden" data-testid="card-mission">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent" />
+              <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/5 rounded-full blur-3xl" />
+              <div className="relative border border-primary/15 rounded-2xl p-10 md:p-16 text-center">
+                <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+                  Our Mission
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Be Unapologetically You</h3>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                   To create a space where people can be themselves without judgment. We believe in the power of honest conversation to inspire, heal, and connect. Every episode is a reminder that your truth is your superpower and being unapologetically yourself is the most courageous thing you can do.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </motion.div>
 
-          <div className="mb-20">
-            <motion.h3
+          <div className="mb-24">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-2xl md:text-3xl font-bold text-foreground text-center mb-10"
+              className="text-center mb-12"
             >
-              Our Values
-            </motion.h3>
+              <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+                What Drives Us
+              </span>
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                Our Values
+              </h3>
+            </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {values.map((value, index) => (
                 <motion.div
@@ -150,15 +165,15 @@ export default function About() {
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="h-full hover-elevate transition-all duration-300" data-testid={`card-value-${index}`}>
-                    <CardContent className="p-6 md:p-8">
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-md bg-primary/10 flex items-center justify-center">
-                          <value.icon className="w-6 h-6 text-primary" />
+                  <Card className="h-full group hover-elevate transition-all duration-300 border-border/50" data-testid={`card-value-${index}`}>
+                    <CardContent className="p-7 md:p-8">
+                      <div className="flex items-start gap-5">
+                        <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/15 transition-colors">
+                          <value.icon className="w-5 h-5 text-primary" />
                         </div>
                         <div>
                           <h3 className="text-lg font-semibold text-card-foreground mb-2">{value.title}</h3>
-                          <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+                          <p className="text-muted-foreground leading-relaxed text-sm">{value.description}</p>
                         </div>
                       </div>
                     </CardContent>
@@ -181,7 +196,7 @@ export default function About() {
             </p>
             <Button
               size="lg"
-              className="gap-2 text-base px-8"
+              className="gap-2 text-base px-8 shadow-lg shadow-primary/20"
               onClick={() => window.open(YOUTUBE_CHANNEL_URL, "_blank")}
               data-testid="button-subscribe-youtube"
             >

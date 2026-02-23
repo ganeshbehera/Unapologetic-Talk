@@ -37,11 +37,10 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-12 md:py-16 bg-background" data-testid="section-contact">
+    <section id="contact" className="py-16 md:py-20 bg-background" data-testid="section-contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-          <div className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="space-y-8">
             {contactReasons.map((reason, index) => (
               <motion.div
                 key={reason.title}
@@ -50,12 +49,12 @@ export function ContactSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-11 h-11 rounded-md bg-primary/10 flex items-center justify-center">
+                <div className="flex items-start gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
                     <reason.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">{reason.title}</h3>
+                    <h3 className="font-semibold text-foreground mb-1.5">{reason.title}</h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">{reason.description}</p>
                   </div>
                 </div>
@@ -69,11 +68,13 @@ export function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Card data-testid="card-contact-form">
-              <CardContent className="p-6 md:p-8">
+            <Card className="border-border/50" data-testid="card-contact-form">
+              <CardContent className="p-7 md:p-8">
                 {submitted ? (
-                  <div className="flex flex-col items-center justify-center gap-4 py-8 text-center">
-                    <CheckCircle className="w-12 h-12 text-primary" />
+                  <div className="flex flex-col items-center justify-center gap-4 py-10 text-center">
+                    <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+                      <CheckCircle className="w-7 h-7 text-primary" />
+                    </div>
                     <h3 className="text-xl font-semibold text-card-foreground">Message Sent!</h3>
                     <p className="text-muted-foreground" data-testid="text-contact-success">
                       Thanks for reaching out. We'll get back to you soon!
@@ -95,6 +96,7 @@ export function ContactSection() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         required
+                        className="rounded-xl bg-background border-border/50"
                         data-testid="input-contact-name"
                       />
                     </div>
@@ -105,6 +107,7 @@ export function ContactSection() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
+                        className="rounded-xl bg-background border-border/50"
                         data-testid="input-contact-email"
                       />
                     </div>
@@ -115,11 +118,11 @@ export function ContactSection() {
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         required
                         rows={5}
-                        className="resize-none"
+                        className="resize-none rounded-xl bg-background border-border/50"
                         data-testid="input-contact-message"
                       />
                     </div>
-                    <Button type="submit" className="w-full gap-2" data-testid="button-contact-submit">
+                    <Button type="submit" size="lg" className="w-full gap-2 shadow-lg shadow-primary/20" data-testid="button-contact-submit">
                       <Send className="w-4 h-4" />
                       Send Message
                     </Button>

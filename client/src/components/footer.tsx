@@ -29,7 +29,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-3">
-            <h4 className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-4">Pages</h4>
+            <h4 className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4">Pages</h4>
             <nav className="flex flex-col gap-2.5">
               {footerLinks.map((link) => (
                 <Link
@@ -45,7 +45,7 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-4">
-            <h4 className="text-xs font-semibold tracking-[0.15em] uppercase text-muted-foreground mb-4">Connect</h4>
+            <h4 className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4">Connect</h4>
             <div className="flex items-center gap-2.5">
               <a
                 href={YOUTUBE_CHANNEL_URL}

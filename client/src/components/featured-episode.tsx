@@ -19,16 +19,17 @@ export function FeaturedEpisode({ episode, onPlay }: FeaturedEpisodeProps) {
     : "";
 
   return (
-    <section className="py-16 md:py-24 bg-background" data-testid="section-featured">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 md:py-32 bg-card/20 relative overflow-hidden" data-testid="section-featured">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/3 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-14"
         >
-          <span className="inline-block text-sm font-semibold tracking-widest uppercase text-gradient mb-3">
+          <span className="inline-block text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
             Latest Episode
           </span>
           <h2
@@ -44,10 +45,10 @@ export function FeaturedEpisode({ episode, onPlay }: FeaturedEpisodeProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
         >
           <div
-            className="relative aspect-video rounded-md bg-muted cursor-pointer group"
+            className="relative aspect-video rounded-xl bg-muted/30 cursor-pointer group overflow-hidden"
             onClick={() => episode.youtubeId && onPlay(episode.youtubeId)}
             data-testid="featured-thumbnail"
           >
@@ -55,25 +56,25 @@ export function FeaturedEpisode({ episode, onPlay }: FeaturedEpisodeProps) {
               <img
                 src={episode.thumbnail}
                 alt={episode.title}
-                className="w-full h-full object-cover rounded-md"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             ) : (
-              <div className="w-full h-full rounded-md bg-gradient-to-br from-primary/20 via-primary/5 to-transparent flex items-center justify-center">
+              <div className="w-full h-full bg-gradient-to-br from-primary/20 via-primary/5 to-transparent flex items-center justify-center">
                 <div className="w-20 h-20 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
                   <Play className="w-9 h-9 text-primary ml-1" />
                 </div>
               </div>
             )}
-            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity rounded-md flex items-center justify-center">
-              <div className="w-20 h-20 rounded-full bg-primary/90 flex items-center justify-center">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+              <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center opacity-0 group-hover:opacity-100 scale-75 group-hover:scale-100 transition-all duration-300 shadow-2xl shadow-primary/30">
                 <Play className="w-9 h-9 text-white ml-1" />
               </div>
             </div>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-5">
             <div className="flex items-center gap-3 flex-wrap">
-              <Badge variant="default" className="text-xs">
+              <Badge variant="default" className="text-xs px-3 py-1">
                 Latest
               </Badge>
               {formattedDate && (
@@ -102,7 +103,7 @@ export function FeaturedEpisode({ episode, onPlay }: FeaturedEpisodeProps) {
               {episode.youtubeId ? (
                 <Button
                   size="lg"
-                  className="gap-2"
+                  className="gap-2 shadow-lg shadow-primary/20"
                   onClick={() => onPlay(episode.youtubeId)}
                   data-testid="button-featured-play"
                 >
@@ -112,7 +113,7 @@ export function FeaturedEpisode({ episode, onPlay }: FeaturedEpisodeProps) {
               ) : (
                 <Button
                   size="lg"
-                  className="gap-2"
+                  className="gap-2 shadow-lg shadow-primary/20"
                   onClick={() => window.open(episode.youtubeUrl, "_blank")}
                   data-testid="button-featured-play"
                 >
