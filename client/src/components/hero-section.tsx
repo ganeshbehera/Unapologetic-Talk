@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { YOUTUBE_CHANNEL_URL } from "@/lib/episodes-data";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import channelBanner from "@assets/channels4_banner_1771816802568.jpg";
 
 const floatingParticles = Array.from({ length: 6 }, (_, i) => ({
   id: i,
@@ -66,33 +67,26 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8"
         >
-          <div className="relative inline-block">
-            <motion.img
-              src="/images/logo-mark.png"
-              alt="Real And Unapologetic"
-              className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 mx-auto rounded-2xl shadow-2xl shadow-primary/20"
-              initial={{ rotate: -10, opacity: 0 }}
-              animate={{ rotate: 0, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-              data-testid="img-hero-logo"
-            />
-            <motion.div
-              className="absolute -inset-2 rounded-2xl border border-primary/30"
-              animate={{ opacity: [0.3, 0.7, 0.3] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </div>
+          <motion.img
+            src={channelBanner}
+            alt="Real And Unapologetic"
+            className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto drop-shadow-2xl"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            data-testid="img-hero-logo"
+          />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
         >
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/10 mb-8">
             <motion.div
@@ -110,32 +104,17 @@ export function HeroSection() {
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[0.95] mb-6"
+          transition={{ duration: 0.9, delay: 0.7, ease: "easeOut" }}
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[0.95] mb-6 sr-only"
           data-testid="text-hero-heading"
         >
-          <motion.span
-            className="inline-block"
-            initial={{ x: -30, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-          >
-            REAL
-          </motion.span>
-          <motion.span
-            className="block text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-500 to-orange-400"
-            initial={{ x: 30, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
-          >
-            &amp; UNAPOLOGETIC
-          </motion.span>
+          REAL &amp; UNAPOLOGETIC
         </motion.h1>
 
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 1.1, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.9, ease: "easeOut" }}
           className="h-1 w-24 mx-auto bg-gradient-to-r from-rose-400 via-pink-500 to-orange-400 rounded-full mb-8"
         />
 
