@@ -31,10 +31,10 @@ export function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           showTransparent
             ? "bg-transparent"
-            : "bg-background/80 backdrop-blur-xl border-b border-border/50"
+            : "bg-background/70 backdrop-blur-2xl border-b border-border/40 shadow-sm"
         }`}
         data-testid="navbar"
       >
@@ -42,34 +42,44 @@ export function Navbar() {
           <div className="flex items-center justify-between gap-4 h-16 md:h-20">
             <Link
               href="/"
-              className="flex items-center gap-2 flex-shrink-0"
+              className="flex items-center gap-2 flex-shrink-0 group"
               data-testid="link-logo"
             >
               <img
                 src="/images/channel-logo.png"
                 alt="Real And Unapologetic"
-                className={`h-8 md:h-10 w-auto transition-all ${showTransparent ? "brightness-0 invert" : "dark:brightness-0 dark:invert"}`}
+                className={`h-7 md:h-9 w-auto transition-all duration-300 ${showTransparent ? "brightness-0 invert" : "dark:brightness-0 dark:invert"}`}
                 data-testid="img-navbar-logo"
               />
             </Link>
 
-            <div className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`px-3 py-2 text-sm font-medium transition-colors rounded-md hover-elevate ${
-                    location === link.href
-                      ? "text-primary"
-                      : showTransparent
-                        ? "text-white/70 hover:text-white"
-                        : "text-muted-foreground hover:text-foreground"
-                  }`}
-                  data-testid={`link-nav-${link.label.toLowerCase()}`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <div className="hidden md:flex items-center gap-0.5">
+              {navLinks.map((link) => {
+                const isActive = location === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`relative px-4 py-2 text-sm font-medium transition-colors rounded-full ${
+                      isActive
+                        ? "text-primary"
+                        : showTransparent
+                          ? "text-white/70 hover:text-white"
+                          : "text-muted-foreground hover:text-foreground"
+                    }`}
+                    data-testid={`link-nav-${link.label.toLowerCase()}`}
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="nav-pill"
+                        className="absolute inset-0 rounded-full bg-primary/10"
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+                      />
+                    )}
+                    <span className="relative z-10">{link.label}</span>
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="flex items-center gap-2">
@@ -105,35 +115,47 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl pt-20 md:hidden"
+            className="fixed inset-0 z-40 bg-background/98 backdrop-blur-2xl pt-20 md:hidden"
           >
-            <div className="flex flex-col items-center gap-6 p-8">
-              {navLinks.map((link) => (
-                <Link
+            <div className="flex flex-col items-center gap-2 p-8">
+              {navLinks.map((link, i) => (
+                <motion.div
                   key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className={`text-2xl font-semibold ${
-                    location === link.href ? "text-primary" : "text-foreground"
-                  }`}
-                  data-testid={`link-mobile-${link.label.toLowerCase()}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
                 >
-                  {link.label}
-                </Link>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className={`block text-2xl font-semibold py-3 px-6 rounded-xl transition-colors ${
+                      location === link.href ? "text-primary bg-primary/5" : "text-foreground"
+                    }`}
+                    data-testid={`link-mobile-${link.label.toLowerCase()}`}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
-              <Button
-                variant="default"
-                size="lg"
-                className="mt-4 gap-2"
-                onClick={() => {
-                  setMobileOpen(false);
-                  window.open(YOUTUBE_CHANNEL_URL, "_blank");
-                }}
-                data-testid="button-mobile-watch"
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25 }}
               >
-                <SiYoutube className="w-5 h-5" />
-                Watch on YouTube
-              </Button>
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="mt-6 gap-2"
+                  onClick={() => {
+                    setMobileOpen(false);
+                    window.open(YOUTUBE_CHANNEL_URL, "_blank");
+                  }}
+                  data-testid="button-mobile-watch"
+                >
+                  <SiYoutube className="w-5 h-5" />
+                  Watch on YouTube
+                </Button>
+              </motion.div>
             </div>
           </motion.div>
         )}
